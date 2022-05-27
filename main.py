@@ -1,12 +1,15 @@
 import PySimpleGUI as sg
+import PIL
 
 """
 Cria uma GUI para o programa. Por que sim, sabe.
 """
 
+bg = Image.open("background.jpg")
+
 sg.theme('DarkAmber')
 
-layout = [[sg.Text("Col")]]
+layout = [[sg.Text("Entre um retângulo para revelar a imagem (e também para resolver o problema).")]]
 
 
 def intersecta(x1, x2, x3, x4, y1, y2, y3, y4):
