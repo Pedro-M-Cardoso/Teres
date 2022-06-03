@@ -1,25 +1,28 @@
-import PySimpleGUI as sg
-import PIL
+# Inicializa as listas de coordenadas x e coordenadas y.
 
-"""
-Cria uma GUI para o programa. Por que sim, sabe.
-"""
+xs = []
+ys = []
 
-bg = Image.open("background.jpg")
+# Obtem o nome do arquivo
 
-sg.theme('DarkAmber')
+a = input("Qual a path do arquivo de entrada? ")
 
-layout = [[sg.Text("Entre um retângulo para revelar a imagem (e também para resolver o problema).")]]
+f = open(a, "r")
+n = f.readlines()
 
+# Verifica se o arquivo é vazio
 
-def intersecta(x1, x2, x3, x4, y1, y2, y3, y4):
-	xDistBig = abs(x1 - x4)
-	xDist1 = abs(x1 - x2)
-	xDist2 = abs(x3 - x4)
+if not n:
+	print("Erro lendo o arquivo")
 
-	yDistBig = abs(y1 - y4)
-	yDist1 = abs(y1 - y2)
-	yDist2 = abs(y3 - y4)
+# Adiciona nas listas de coordenadas
 
-	return ((xDist1 + xDist2) > xDistBig) or ((yDist1 + yDist2) > yDistBig) # Se a distância entre o primeiro e o último for menor que o tamanho dos dois lados, há intersecção
+for i in n:
+	minhaLista = i.split()
+	xs.append(minhaLista[0])
+	xs.append(minhaLista[2])
+	ys.append(minhaLista[1])
+	ys.append(minhaLista[3])
+
+print(f"({min(xs)}, {max(ys)}), ({max(xs)}, {min(ys)})")
 
