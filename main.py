@@ -1,3 +1,6 @@
+# Feito por Pedro Augusto Machado Cardoso
+
+
 # Inicializa as listas de coordenadas x e coordenadas y.
 
 xs = []
