@@ -10,6 +10,8 @@ ys = []
 
 a = input("Qual a path do arquivo de entrada? ")
 
+# O readlines() faz uma lista n com cada linha como elemento
+
 f = open(a, "r")
 n = f.readlines()
 
@@ -22,10 +24,10 @@ if not n:
 
 for i in n:
 	minhaLista = i.split()
-	xs.append(minhaLista[0])
-	xs.append(minhaLista[2])
-	ys.append(minhaLista[1])
-	ys.append(minhaLista[3])
+	xs.append(int(minhaLista[0]))
+	xs.append(int(minhaLista[2]))
+	ys.append(int(minhaLista[1]))
+	ys.append(int(minhaLista[3]))
 
 print(f"({min(xs)}, {max(ys)}), ({max(xs)}, {min(ys)})")
 
